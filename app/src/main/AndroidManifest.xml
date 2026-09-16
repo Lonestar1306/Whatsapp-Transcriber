@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lonestar.transcriber"> <!-- Cambia con il tuo package -->
+
+    <!-- Permesso necessario se decidi di salvare file in locale in futuro, ma non strettamente richiesto per leggere URI content:// -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Transcriber Pro"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TransparentApp"> <!-- Cruciale: un tema custom trasparente -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"> <!-- Evita di aprire multiple istanze -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- IL FILTRO MAGICO PER WHATSAPP -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- WhatsApp usa formati come audio/ogg, noi accettiamo tutti gli audio -->
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

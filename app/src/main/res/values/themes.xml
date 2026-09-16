@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.TransparentApp" parent="android:Theme.DeviceDefault.NoActionBar">
+        <!-- Rende lo sfondo della finestra invisibile -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item> <!-- Rimuove l'animazione di apertura per renderla istantanea -->
+    </style>
+</resources>
